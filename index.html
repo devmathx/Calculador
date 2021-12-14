@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WEB Calculador</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div id="cabeçalho">
+        <h1>Calculador</h1>
+    </div>
+    <div id="conteudo">
+        <div id="digitos">
+            <input type="number" name="" id="txtn1">
+            <span id="meio" onclick="resetar()">&nbsp;</span>
+            <input type="number" name="" id="txtn2">
+        </div>
+        <div id="resultado">
+           ...
+        </div>
+        <div>
+            <input type="button" value="LIMPAR" id="resetar" onclick="resetar()">
+        </div>    
+        <div id="botoes">
+            <input type="button" class="botao" value="SOMAR" onclick="Somar()">
+            <input type="button" class="botao" value="SUBTRAIR" onclick="Sub()">
+            <input type="button" class="botao" value="MULTIPLICAR" onclick="Mult()">
+            <input type="button" class="botao" value="DIVIDIR" onclick="Divi()">
+        </div>
+    </div>
+
+    <script>     
+        function Somar() { 
+            var txtn1 = window.document.getElementById("txtn1");
+            var txtn2 = window.document.getElementById("txtn2");
+            var n1 = Number(txtn1.value);
+            var n2 = Number(txtn2.value);
+            resultado = window.document.getElementById("resultado");
+            // Somando
+            var soma = n1 + n2; 
+            resultado.innerHTML = `${soma}`;
+            var meio = window.document.getElementById("meio");
+            meio.innerHTML = "+";
+        }
+        function Sub() {
+            var txtn1 = window.document.getElementById("txtn1");
+            var txtn2 = window.document.getElementById("txtn2");
+            var n1 = Number(txtn1.value);
+            var n2 = Number(txtn2.value);
+            resultado = window.document.getElementById("resultado");
+            // Subtraindo
+            var subtrai = n1 - n2;
+            resultado.innerHTML = `${subtrai}`;
+            var meio = window.document.getElementById("meio");
+            meio.innerHTML = "-";
+        }
+        function Mult(){
+            var txtn1 = window.document.getElementById("txtn1");
+            var txtn2 = window.document.getElementById("txtn2");
+            var n1 = Number(txtn1.value);
+            var n2 = Number(txtn2.value);
+            resultado = window.document.getElementById("resultado");
+            // Multiplicando
+            var multiplica = n1 * n2; 
+            resultado.innerHTML = `${multiplica}`; 
+            var meio = window.document.getElementById("meio");
+            meio.innerHTML = "×";
+        }
+        function Divi(){
+            var txtn1 = window.document.getElementById("txtn1");
+            var txtn2 = window.document.getElementById("txtn2");
+            var n1 = Number(txtn1.value);
+            var n2 = Number(txtn2.value);
+            resultado = window.document.getElementById("resultado");
+            // Dividindo
+            var divide = n1 / n2;
+            resultado.innerHTML = `${divide}`;
+            var meio = window.document.getElementById("meio");
+            meio.innerHTML = "÷";
+        }
+        function resetar() {
+            // Meio
+            var reset = window.document.getElementById("meio");
+            reset.innerHTML = "&nbsp;"
+            // Resultado
+            var resultado = window.document.getElementById("resultado");
+            resultado.innerHTML = "&nbsp;";
+        }
+    </script>
+</body>
+</html>
